@@ -1,0 +1,240 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+/* App Header Nav */
+.app-header {
+    background-color: #ffffff;
+    padding: 12px 20px;
+    border-bottom: 1px solid #dcdfe6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.back-link {
+    color: #0070f3;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+.app-header h2 {
+    font-size: 16px;
+    color: #2c3e50;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.print-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 13px;
+    transition: background-color 0.2s;
+}
+
+.print-btn:hover {
+    background-color: #218838;
+}
+
+/* Split Panel Workspace */
+.workspace {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+.form-panel {
+    width: 450px;
+    border-right: 1px solid #dcdfe6;
+    background-color: #ffffff;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-section {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border-bottom: 1px solid #f2f6fc;
+    padding-bottom: 15px;
+}
+
+.form-section h3 {
+    font-size: 13px;
+    color: #909399;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+}
+
+.input-hint {
+    font-size: 11px;
+    color: #a8abb2;
+    margin-top: -4px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #dcdfe6;
+    border-radius: 4px;
+    font-size: 13px;
+    background-color: #fcfdfd;
+    color: #303133;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #0070f3;
+    background-color: #ffffff;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 70px;
+    line-height: 1.4;
+}
+
+.large-entry {
+    min-height: 160px;
+    font-family: monospace;
+}
+
+/* Interactive Previewer Panel */
+.preview-panel {
+    flex: 1;
+    background-color: #707783;
+    padding: 30px;
+    overflow-y: auto;
+    display: flex;
+    justify-content: center;
+}
+
+/* Standard A4/Letter Paper Simulation Grid */
+.paper-canvas {
+    background-color: #ffffff;
+    width: 8.5in;
+    min-height: 11in;
+    padding: 0.6in 0.7in;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    color: #111111;
+    line-height: 1.5;
+    font-size: 13px;
+}
+
+/* ATS Standard Resume Styles Embedded */
+.res-header {
+    border-bottom: 2px solid #222;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.res-name {
+    font-size: 26px;
+    font-weight: bold;
+    letter-spacing: -0.5px;
+}
+
+.res-title {
+    font-size: 14px;
+    color: #555;
+    margin-top: 2px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.res-contact {
+    font-size: 12px;
+    color: #444;
+    margin-top: 6px;
+}
+
+.res-section-title {
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-bottom: 1px solid #aaa;
+    margin-top: 18px;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+.res-summary, .res-skills {
+    font-size: 12.5px;
+}
+
+.res-block {
+    margin-bottom: 12px;
+}
+
+.res-block-header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.res-block-sub {
+    display: flex;
+    justify-content: space-between;
+    font-style: italic;
+    color: #444;
+    font-size: 12px;
+    margin-bottom: 4px;
+}
+
+.res-bullets {
+    padding-left: 15px;
+    font-size: 12.5px;
+    list-style-type: disc;
+}
+
+.res-bullets li {
+    margin-bottom: 3px;
+}
+
+/* CSS PRINT MEDIA OVERRIDE HOOK */
+/* This cleanly hides the web app inputs and scales the canvas perfectly to the boundaries of the PDF printer sheet */
+@media print {
+    body, .workspace, .preview-panel {
+        background: #fff !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        height: auto !important;
+        overflow: visible !important;
+    }
+    .app-header, .form-panel, .print-btn {
+        display: none !important;
+    }
+    .paper-canvas {
+        width: 100% !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+}

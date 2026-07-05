@@ -1,0 +1,247 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #f5f7fb;
+    color: #333;
+}
+
+/* App Header */
+.app-header {
+    background-color: #ffffff;
+    padding: 15px 20px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.app-header h2 {
+    font-size: 18px;
+    color: #111;
+}
+
+/* Workspace Layout */
+.workspace {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+}
+
+.editor-container, .preview-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    transition: all 0.2s ease-in-out;
+}
+
+.editor-container {
+    border-right: 1px solid #e0e0e0;
+}
+
+/* Mode Selector and Tabs styling */
+.editor-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 10px;
+    background: #eef2f7;
+    padding: 12px;
+    border-radius: 4px;
+}
+
+.mode-select {
+    display: flex;
+    gap: 15px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.mode-select label {
+    cursor: pointer;
+}
+
+.control-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    min-height: 32px;
+}
+
+.tab-group {
+    display: flex;
+    gap: 5px;
+}
+
+.tab-btn {
+    border: none;
+    background-color: #d1d5db;
+    color: #333;
+    padding: 6px 14px;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.tab-btn.active {
+    background-color: #0070f3;
+    color: white;
+}
+
+.copy-action-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.inline-toggle-label {
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    user-select: none;
+}
+
+.copy-btn {
+    background-color: #28a745;
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.copy-btn:hover {
+    background-color: #218838;
+}
+
+.editor-box {
+    flex: 1;
+    display: flex;
+}
+
+textarea {
+    flex: 1;
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 14px;
+    resize: none;
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+    line-height: 1.5;
+}
+
+/* Preview Controls Toolbar */
+.preview-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #eef2f7;
+    padding: 10px 12px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.dimension-inputs {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.dimension-inputs input {
+    width: 90px;
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 13px;
+    text-align: center;
+}
+
+.dimension-inputs span {
+    color: #666;
+    font-weight: bold;
+}
+
+.preview-info-tag {
+    font-size: 12px;
+    font-weight: 600;
+    color: #0070f3;
+    background: #e1efff;
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+.preview-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.action-btn {
+    border: none;
+    background-color: #6c757d;
+    color: white;
+    padding: 6px 14px;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.action-btn:hover {
+    background-color: #5a6268;
+}
+
+.reset-btn {
+    background-color: #dc3545;
+}
+
+.reset-btn:hover {
+    background-color: #bd2130;
+}
+
+/* Centered Iframe Wrapper for Custom Sizing */
+.iframe-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #cbd5e1;
+    border-radius: 4px;
+    overflow: auto;
+    padding: 10px;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #94a3b8;
+    border-radius: 4px;
+    background-color: white;
+    transition: width 0.15s ease, height 0.15s ease;
+}
+
+/* Utility Classes */
+.hidden {
+    display: none !important;
+}
+
+/* Full Screen View Mechanics */
+.workspace.fullscreen-active .editor-container {
+    display: none !important;
+}

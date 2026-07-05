@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Code Previewer & Visual Compiler</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Main Application Header -->
+    <header class="app-header">
+        <h2>HTML Canvas & Visual Preview Tool</h2>
+    </header>
+
+    <!-- Main Workspace (Split Screen) -->
+    <main class="workspace" id="workspace">
+        <div class="editor-container" id="editorContainer">
+            <!-- Mode & Tab Selector -->
+            <div class="editor-controls">
+                <div class="mode-select">
+                    <label><input type="radio" name="codeMode" value="single" checked> Single File</label>
+                    <label><input type="radio" name="codeMode" value="split"> Split Files (3 Source)</label>
+                </div>
+                <div class="control-actions">
+                    <div id="tabGroup" class="tab-group hidden">
+                        <button class="tab-btn active" data-tab="html">HTML</button>
+                        <button class="tab-btn" data-tab="css">CSS</button>
+                        <button class="tab-btn" data-tab="js">JS</button>
+                    </div>
+                    <!-- Inliner Toggle + Copy Button Group -->
+                    <div class="copy-action-group">
+                        <label class="inline-toggle-label">
+                            <input type="checkbox" id="inlineCssToggle" checked> Auto-Inline CSS
+                        </label>
+                        <button id="copyBtn" class="copy-btn">📋 Copy Unified HTML</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Code Editors -->
+            <div class="editor-box">
+                <textarea id="singleEditor" placeholder="Type or paste your combined HTML code here..."></textarea>
+                <textarea id="htmlEditor" class="hidden" placeholder="<!-- HTML Body Only -->\n<div class='card'>\n  <h1>Hello World</h1>\n</div>"></textarea>
+                <textarea id="cssEditor" class="hidden" placeholder="/* CSS Styles Only */\n.card {\n  background: #fff;\n}"></textarea>
+                <textarea id="jsEditor" class="hidden" placeholder="// JavaScript Only\nalert('Hello');"></textarea>
+            </div>
+        </div>
+        
+        <div class="preview-container" id="previewContainer">
+            <!-- Dynamic Dimensions Control Bar -->
+            <div class="preview-controls">
+                <div class="dimension-inputs">
+                    <input type="number" id="previewWidth" placeholder="Width (px)" min="200">
+                    <span>×</span>
+                    <input type="number" id="previewHeight" placeholder="Height (px)" min="200">
+                </div>
+                <div class="preview-info-tag">✍️ Click text in preview to edit inline</div>
+                <div class="preview-actions">
+                    <button id="fullscreenBtn" class="action-btn">⛶ Full Screen</button>
+                    <button id="resetBtn" class="action-btn reset-btn">↺ Reset</button>
+                </div>
+            </div>
+            
+            <!-- Centered Wrapper for Dimension Resizing -->
+            <div class="iframe-wrapper">
+                <iframe id="previewFrame" sandbox="allow-same-origin allow-scripts"></iframe>
+            </div>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>

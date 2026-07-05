@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATS Resume Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Navigation bar -->
+    <header class="app-header">
+        <a href="../index.html" class="back-link">← Back to Hub</a>
+        <h2>Professional Resume Generator</h2>
+        <button id="printBtn" class="print-btn">🖨️ Export / Print PDF</button>
+    </header>
+
+    <!-- App Workspace split -->
+    <main class="workspace">
+        <!-- Left Side: Data Entry Form Fields -->
+        <section class="form-panel">
+            
+            <div class="form-section">
+                <h3>1. Contact Information</h3>
+                <input type="text" id="fullName" placeholder="Full Name" value="Jane Doe">
+                <input type="text" id="jobTitle" placeholder="Professional Title" value="Senior Software Engineer">
+                <input type="email" id="email" placeholder="Email Address" value="jane.doe@email.com">
+                <input type="tel" id="phone" placeholder="Phone Number" value="(555) 019-2834">
+                <input type="text" id="location" placeholder="Location (City, State)" value="San Francisco, CA">
+                <input type="url" id="linkedin" placeholder="LinkedIn or Website URL" value="linkedin.com/in/janedoe">
+            </div>
+
+            <div class="form-section">
+                <h3>2. Professional Summary</h3>
+                <textarea id="summary" placeholder="Write a short career summary...">Results-driven Software Engineer with over 5 years of experience building scalable web applications. Expert in JavaScript, Node.js, and cloud systems architecture.</textarea>
+            </div>
+
+            <div class="form-section">
+                <h3>3. Core Expertise / Skills</h3>
+                <p class="input-hint">Separate your skills with commas</p>
+                <input type="text" id="skills" placeholder="React, Node.js, AWS, Python, SQL" value="JavaScript, TypeScript, React, Node.js, AWS, Docker, Git, SQL">
+            </div>
+
+            <div class="form-section">
+                <h3>4. Work Experience</h3>
+                <textarea id="experience" class="large-entry" placeholder="Format: Job Title | Company | Dates&#10;• Accomplishment 1&#10;• Accomplishment 2">Senior Software Engineer | TechCorp Inc. | 2024 - Present
+• Spearheaded the migration of legacy architecture to a microservices layout, boosting performance metrics by 40%.
+• Mentored a team of 6 junior engineers and established robust continuous integration pipelines.
+
+Software Engineer | Innovate Systems | 2021 - 2024
+• Designed and shipped 12 client-facing web application feature sets using modern engineering models.
+• Optimized relational database queries to cut system processing latency overhead down by 25%.</textarea>
+            </div>
+
+            <div class="form-section">
+                <h3>5. Education</h3>
+                <textarea id="education" placeholder="Format: Degree / Major | University Name | Graduation Year">B.S. in Computer Science | State University | 2021</textarea>
+            </div>
+
+        </section>
+
+        <!-- Right Side: Live Document Frame View -->
+        <section class="preview-panel">
+            <div class="paper-canvas" id="resumeCanvas">
+                <!-- Data will be dynamically rendered into this container from app.js -->
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
