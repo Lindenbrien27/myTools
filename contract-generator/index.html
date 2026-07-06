@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operational Master Agreement Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Navigation bar -->
+    <header class="app-header">
+        <a href="../index.html" class="back-link">← Back to Hub</a>
+        <h2>Master Agreement Generator</h2>
+        <button id="printBtn" class="print-btn">🖨️ Export / Print PDF</button>
+    </header>
+
+    <!-- App Workspace Split -->
+    <main class="workspace">
+        <!-- Left Side: Data Entry Form Fields -->
+        <section class="form-panel">
+            
+            <div class="form-section">
+                <h3>1. Provider Details (Prepared By)</h3>
+                <input type="text" id="providerName" placeholder="Provider Name" value="Linden Brien Bunagan">
+                <input type="text" id="providerTitle" placeholder="Provider Title / Role" value="Independent Contractor / Virtual Assistant">
+                <input type="email" id="providerEmail" placeholder="Provider Email" value="linden.brien.b@gmail.com">
+            </div>
+
+            <div class="form-section">
+                <h3>2. Client Details (Prepared For)</h3>
+                <input type="text" id="clientOrg" placeholder="Client Organization / Company" value="[Client Organization]">
+                <input type="text" id="clientRep" placeholder="Authorized Representative" value="[Authorized Representative Name]">
+                <input type="text" id="contractDate" placeholder="Agreement Date" value="July 7, 2026">
+            </div>
+
+            <div class="form-section">
+                <h3>3. Custom Onboarding Modules (Phase 2)</h3>
+                <p class="input-hint">Specify your kickoff platforms and tools</p>
+                <input type="text" id="schedulingTool" placeholder="Scheduling Tool (e.g., Calendly)" value="Calendly">
+                <input type="text" id="videoSuite" placeholder="Video Suite (e.g., Teams, Zoom)" value="Teams, Zoom, or Google Meet">
+            </div>
+
+            <div class="form-section">
+                <h3>4. Central Portal Channels (Section 2)</h3>
+                <input type="text" id="storageLocation" placeholder="Storage Location" value="Google Drive">
+                <input type="text" id="surveyTool" placeholder="Feedback Survey Tool" value="Typeform">
+            </div>
+
+        </section>
+
+        <!-- Right Side: Live Document Frame View -->
+        <section class="preview-panel">
+            <div class="paper-canvas" id="contractCanvas">
+                <!-- Contract data will be dynamically rendered into this container from app.js -->
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>

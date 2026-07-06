@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corporate Email & Welcome Letter Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Navigation bar -->
+    <header class="app-header">
+        <a href="../index.html" class="back-link">← Back to Hub</a>
+        <h2>Email & Letterhead Generator</h2>
+        <div class="preview-info-tag">✍️ Click any text on the page to edit inline</div>
+        <button id="printBtn" class="print-btn">🖨️ Export / Print PDF</button>
+    </header>
+
+    <!-- App Workspace Split -->
+    <main class="workspace">
+        <!-- Left Side: Data Entry Form Fields -->
+        <section class="form-panel">
+            <div class="form-section">
+                <h3>1. Header Brand Configuration</h3>
+                <input type="text" id="headerEmail" placeholder="Company Top Email" value="contact@ITcorp.com">
+                <input type="text" id="headerWeb" placeholder="Company Top Website" value="www.Template.net">
+                <input type="text" id="headerPhone" placeholder="Company Top Phone" value="222 555 7777">
+                <input type="text" id="logoText" placeholder="Logo Initial Letter" value="T.">
+            </div>
+
+            <div class="form-section">
+                <h3>2. Document Metadata</h3>
+                <input type="text" id="docTypeTitle" placeholder="Document Title" value="Welcome Letter">
+                <input type="text" id="companyName" placeholder="Your Company Name" value="TechCorp Solutions">
+                <input type="text" id="companyAddress" placeholder="Company Street Address" value="123 Main Street">
+                <input type="text" id="companyCity" placeholder="City, State, Zip" value="Cityville, CA 90001">
+                <input type="text" id="letterDate" placeholder="Letter Date" value="October 1, 2050">
+            </div>
+
+            <div class="form-section">
+                <h3>3. Recipient Details</h3>
+                <input type="text" id="recipientName" placeholder="Recipient Name" value="Clint Renner">
+            </div>
+        </section>
+
+        <!-- Right Side: Live Document Frame View -->
+        <section class="preview-panel">
+            <!-- The entire wrapper is now a seamless printable container -->
+            <div class="paper-canvas" id="emailCanvas">
+                <!-- Pages will generate natively here inside the UI loop -->
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
